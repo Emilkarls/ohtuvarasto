@@ -69,7 +69,7 @@ class TestVarasto(unittest.TestCase):
     def test_ottaminen_liikaa(self):
         self.varasto.lisaa_varastoon(8)
 
-        maara = self.varasto.ota_varastosta(6)
+        maara = self.varasto.ota_varastosta(10)
 
         self.assertAlmostEqual(self.varasto.paljonko_mahtuu(), 10)
         self.assertAlmostEqual(maara, 8)
