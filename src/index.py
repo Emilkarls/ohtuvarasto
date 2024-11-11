@@ -1,10 +1,7 @@
 from varasto import Varasto
 
 
-def main():
-    mehua = Varasto(100.0)
-    olutta = Varasto(100.0, 20.2)
-
+def olutta_mehua(olutta, mehua):
     print("Luonnin jälkeen:")
     print(f"Mehuvarasto: {mehua}")
     print(f"Olutvarasto: {olutta}")
@@ -22,6 +19,7 @@ def main():
     mehua.ota_varastosta(3.14)
     print(f"Mehuvarasto: {mehua}")
 
+def huonoa():
     print("Virhetilanteita:")
     print("Varasto(-100.0);")
     huono = Varasto(-100.0)
@@ -31,6 +29,7 @@ def main():
     huono = Varasto(100.0, -50.7)
     print(huono)
 
+def lisaa_olutta_mehua(olutta, mehua):
     print(f"Olutvarasto: {olutta}")
     print("olutta.lisaa_varastoon(1000.0)")
     olutta.lisaa_varastoon(1000.0)
@@ -41,6 +40,7 @@ def main():
     mehua.lisaa_varastoon(-666.0)
     print(f"Mehuvarasto: {mehua}")
 
+def saatiin_olutta_mehua(olutta, mehua):
     print(f"Olutvarasto: {olutta}")
     print("olutta.ota_varastosta(1000.0)")
     saatiin = olutta.ota_varastosta(1000.0)
@@ -53,6 +53,18 @@ def main():
     print(f"saatiin {saatiin}")
     print(f"Mehuvarasto: {mehua}")
 
+def main():
+
+    mehua = Varasto(100.0)
+    olutta = Varasto(100.0, 20.2)
+
+    olutta_mehua(olutta, mehua)
+
+    huonoa()
+
+    lisaa_olutta_mehua(olutta, mehua)
+
+    saatiin_olutta_mehua(olutta, mehua)
 
 if __name__ == "__main__":
     main()
